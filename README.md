@@ -18,7 +18,7 @@ Implementar serviços para garantir monitoramento detalhado sobre a utilização
 2. **CONFIG**
    - **Serviço de compliance da AWS que fornece uma maneira de monitorar nossos recursos**
    - **Além de monitorar, podemos implementar regras para nossos recursos, onde essa regra crie uma barreira ao querer alterar as configurações do recursos desejado**
-   - **Qualquer alteração feita nas configurações de uma Instância, por exemplo, são gerados logs, onde serão armazenados no S3 para que possam ser acessados para fins de auditoria 
+   - **Qualquer alteração feita nas configurações de uma Instância, por exemplo, são gerados logs, onde serão armazenados no S3 para que possam ser acessados para fins de auditoria** 
    - **Fornece métodos de notificação e correção automática caso as configurações deste recurso tenha sido alterados**
 
 3. **CloudWatch**
