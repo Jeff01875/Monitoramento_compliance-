@@ -1,5 +1,5 @@
 # Monitoramento-compliance
-**Esse repositório documenta um projeto que utiliza de serviços como: EC2, IAM, CloudWatch, Config, S3 e entre outros...**
+**Esse repositório documenta um projeto que utiliza de serviços como: EC2, IAM, CloudWatch, Config, S3 e entre outros para garantir monitoramento preciso das máquinas virtuais utilizando o cloudwatch e a implementação de regras através do Config garantindo que caso qualquer alteração na configuração desses recusos seja monitorado e que notifique caso ocorra**
 
 ## **Diagrama do projeto**
 
