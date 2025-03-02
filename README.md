@@ -1,2 +1,4 @@
-# Monitoramento_compliance
-Projeto de monitoramento profundo de Intâncias e implementação de regras para o compliance da workload 
+# Monitoramento-compliance
+**Esse repositório documenta um projeto que utiliza de serviços como: EC2, IAM, CloudWatch, Config, S3 e entre outros...
+
+## **Diagrama do projeto**
