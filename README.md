@@ -72,8 +72,33 @@ Implementar serviços para garantir monitoramento detalhado sobre a utilização
    ![table_route.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/table_route.png)
 
    > **⚠️ Atenção:** Quando se cria uma VPC, automaticamente se cria uma Route Table default para que os recursos internos da vpc, possam se comunicar entre eles. Que é a tabela que está na imagem 10.0.0.0/24.
+---
+5.0 Criação do SG( Security Group)
+   - O SG é um firewall a nível de instância que cria regras para filtras quem ou oque pode acessar a instância, aquele recurso
+   - Essas regras podemos criar regras como: portas de acesso (http, https), endereços IP específicos (escolher um enedereço específico aonde só ele pode acessar aquela máquina)
 
-5. 
+   ![Security_group_ssh.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/Security_group_ssh.png)
+   
+   > **⚠️ Atenção:** Criei em SG para associa-lo a instância privada, pois ele não terá acesso a internet, mas caso eu queira ter um acesso de
+alguma forma, irei me comunicar com ele através do SSH. Não está de acordo com as boas práticas de segurança pois, com essa regra, qualquer pessoa que tenha as informações necessarias dessa máquina, irá conseguir acessa-lá, porém, como estou fazendo um teste, permiti que o acesso SSH seja de qualquer lugar. Repetindo, Não é aconselhavel utilizar esse meio porque seu ambiente, sua máquina não está segura. 
+
+5.1 Criação SG Público
+   - Esse SG será difente pois essa máquina terá acesso a internt, e tenho que implmentar regras aonde permitem que hosts externos condigam ter acesso a essa máquina
+
+   ![security_group_public_Acess.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/security_group_public_Acess.png)
+   
+6. Criação de instâncias
+
+   ![instancia_publica.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/instancia_publica.png)
+   
+   - Criei duas intâncias EC2 T2. micro, Amazon linux 2 ami
+   - Tive que criar com essas configurações em especifíco pois ela compõe de um pacote que irei instalar futuramente
+   - Fiz uma única alteração nessas instância, que seria qual availability zone ele iria ficar, e com essa alteração, eu irei determinar se essas máquinas virtuais teriam endereço público ou não.
+  
+   ![Criação_ec2.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/Cria%C3%A7%C3%A3o_ec2.png)
+
+7. 
+
 
 
 
