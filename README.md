@@ -11,7 +11,7 @@
 Implementar serviços para garantir monitoramento detalhado sobre a utilização dos componentes do hardware das instâncias, fornecendo informações essenciais aonde podem auxiliar em tomada de decisões. Utilizar também serviços de compliance, para que possa garantir a conformidade com as regras da empresa, garantindo boas práticas em sua carga de trabalho 
 ---
 ### Componentes e funcionalidades 
-1. **EC2 (Elastic Compute Cloud)
+1. **EC2 (Elastic Compute Cloud)**
    - **Serviço de computação em nuvem que permite criar máquinas virtuais com diferentes famílias de instâncias**
    - **Cada uma é otimizada para um propósito específico, como Machine Learning, Hospedagem de sites, armazenamentos de alto desempenho HDD, SSD entre outros**
 
