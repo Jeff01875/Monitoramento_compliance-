@@ -99,8 +99,8 @@ alguma forma, irei me comunicar com ele através do SSH. Não está de acordo co
 
 7.Test ping da Instância privada 
    1. - Por ter criado duas instância em sub-redes diferentes, e em Availability zone distintas também, eu quis testar o tempo de resposta que uma instância tem da outra.
-   2 - Fiz uma pequena alteração no SG da Máquina virtual que estava na sub-rede privada aonde eu permitia "Custom ICMP Rule" para qualquer lugar.
-   3 - Acessei o terminal da minha instância pública, escrevi " ping 10.0.0.97"  
+   2. - Fiz uma pequena alteração no SG da Máquina virtual que estava na sub-rede privada aonde eu permitia "Custom ICMP Rule" para qualquer lugar.
+   3. - Acessei o terminal da minha instância pública, escrevi " ping 10.0.0.97"  
 
    ![ping_server_privado.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/ping_server_privado.png)
    ---
