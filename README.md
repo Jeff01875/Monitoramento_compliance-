@@ -103,9 +103,14 @@ alguma forma, irei me comunicar com ele através do SSH. Não está de acordo co
    3. - Acessei o terminal da minha instância pública, escrevi " ping 10.0.0.97"  
 
    ![ping_server_privado.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/ping_server_privado.png)
+
    ---
  8. Criação da role e associando ela à instância
-      
+   - Está Role será criada e associada em uma máquina pois irei instalar um Agente do Cloudwatch
+   - Com está Regra o Agente irá conseguir acesso das informações daquela instância, como por exemplo: Volume de armazenamento, identidade da máquina e entre outros
+   - Além de ler, irá fornecer essas informações visualmente através do CloudWatch, garantindo uma visualização amigável para quem terá acesso aos dados  
+  
+   ![Criação_Role_Policy.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/Cria%C3%A7%C3%A3o_Role_Policy.png)   
 
 
 
