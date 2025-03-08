@@ -123,7 +123,7 @@ alguma forma, irei me comunicar com ele através do SSH. Não está de acordo co
    > **⚠️ Atenção:** Como já havia dito antes, por ter escolhido a Instância Amazon Linux 2, facilitaria pois com ela eu não seria necessario baixar o Agente. Este pacote se encontra na VM, com isso, só seria necessário escrever **sudo yum install amazon-cloudwatch-agent** e a instalação do Agente seria feita
 
  10. Iniciando o assistente
-   - O assistente ele irá te ajudar na configuração do seu Agente
+   - O assistente irá ajudar na configuração do seu Agente
    - Fará diversas perguntas sobre qual seria as métricas que queremos monitorar
    - tempo de coleta dessas métricas, Qual seria o sistema operacional da máquina que se está utilizando
 
