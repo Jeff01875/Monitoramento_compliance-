@@ -34,7 +34,7 @@ Implementar serviços para garantir monitoramento detalhado sobre a utilização
      
    ![Criação_VPC.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/Cria%C3%A7%C3%A3o_VPC.png)
 
-    > **⚠️ Atenção:** Criei uma VPC com CIDR IPV4 de 10.0.0.0/24. Esse endereço ip é privado, e deve ser utilizado para manter a privacidade do seu ambiente virtual. Utilizei a mascára 24 pois ela me fornece uma quantidade de 256 endereços IP que posso fornecer aos meus recursos.
+   > **⚠️ Atenção:** Criei uma VPC com CIDR IPV4 de 10.0.0.0/24. Esse endereço ip é privado, e deve ser utilizado para manter a privacidade do seu ambiente virtual. Utilizei a mascára 24 pois ela me fornece uma quantidade de 256 endereços IP que posso fornecer aos meus recursos.
 ---
 2.0 Criação das Sub-redes
    - É a segmentação de endereço ip de uma rede maior 
@@ -111,8 +111,33 @@ alguma forma, irei me comunicar com ele através do SSH. Não está de acordo co
    - Além de ler, irá fornecer essas informações visualmente através do CloudWatch, garantindo uma visualização amigável para quem terá acesso aos dados  
   
    ![Criação_Role_Policy.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/Cria%C3%A7%C3%A3o_Role_Policy.png)   
-
-
-
-
+ 
+ 9. Instalação do Agente na máquina pública
+   - Um Agente é utilizado para monitorar uma gama maior de métricas, fornecendo detalhes maiores sobre elas
+   - Monitora Memória RAM, udo detalhado do disco (I/O) entre outros
+   - A coleta das métricas do CloudWatch é de 5 minutos, podendo aprimorar para 1 min, mas isso gerar custos
+   - O Agente permite ter uma coleta de métricas de 10, 20 ou 30 segundos, tornando menor o tempo de coleta e ajudando a encontrar problemas mais rápido
+ 
+   ![instalando_agente.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/instalando_agente.png) 
    
+   > **⚠️ Atenção:** Como já havia dito antes, por ter escolhido a Instância Amazon Linux 2, facilitaria pois com ela eu não seria necessario baixar o Agente. Este pacote se encontra na VM, com isso, só seria necessário escrever **sudo yum install amazon-cloudwatch-agent** e a instalação do Agente seria feita
+
+ 10. Iniciando o assistente
+   - O assistente ele irá te ajudar na configuração do seu Agente
+   - Fará diversas perguntas sobre qual seria as métricas que queremos monitorar
+   - tempo de coleta dessas métricas, Qual seria o sistema operacional da máquina que se está utilizando
+
+   ![assistente_config_agent.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/assistente_config_agent.png)
+   
+   - Fiz todo o processo para instalar, aparetemente a isntalação havia sido feita com sucesso, porém, verificar se o Agente já estava sendo executado, ele estava inativo
+   - Tive que forçar a inicialização dele manualmente, tive que escrever **sudo systemctl start amazon-cloudwatch-agent** e após **sudo systemctl status amazon-cloudwatch-agent**
+   - Eu inicei o Agente do CloudWatch e iria verificar se ele já estava em execução
+   
+   ![iniciliazação_sucesso_agent.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/iniciliaza%C3%A7%C3%A3o_sucesso_agent.png) 
+
+ 11. Monitoramento das métrcias no console do CloudWatch
+   - O teste final seria conseguir visualizar a coleta das métricas que selecionei
+   - Fui até o Console do CloudWatch para verificar se tudo estava funcionando corretamente
+
+   ![coleta_métricas_1.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/coleta_m%C3%A9tricas_1.png)
+     
