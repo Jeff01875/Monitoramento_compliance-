@@ -140,4 +140,41 @@ alguma forma, irei me comunicar com ele através do SSH. Não está de acordo co
    - Fui até o Console do CloudWatch para verificar se tudo estava funcionando corretamente
 
    ![coleta_métricas_1.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/coleta_m%C3%A9tricas_1.png)
+   
+---
+ 12. Criação de regras do config
+    - Config é utilizado para compliance em suas cargas de trabalho
+    - Podemos monitorar e verificar se algum recurso teve alguma alteração ou está de acordo com as regras implementadas
+    - Com ele podemos ser notificados através do SNS, Corrigir automaticamente alterações feitas em seus recursos utlizando script no lambda
+
+     > **⚠️ Atenção:**  Antes da criação das regras, eu tive que criar e associar uma role no recurso que seria uma EC2. com essa regra, o config terá acesso aos dados daquele recurso, permitndo analisar validar se ele está em conformidade ou não  
+
+   ![role_instance.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/role_instance.png)
+
+12.1 Criação regras config
+    - Implementei uma regra aonde verifica se todas Instâncias estão com TAGS
+    - TAGS são essenciais para a identificação e organização dos recursos, principalmente em cenários onde sua WorkLoad compoe de muitos recursos
+
+   ![criação_regra_config.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/cria%C3%A7%C3%A3o_regra_config.png)
+
+13. Armazenamento dos logs, Retenção e Notificação
+   - O Config precisa de um local para armazenar os logs que serão gerados por ele. Conseguimos criar uma bucket no s3 diretamente no config, faciliando e acelerando o processo de criação e armazenamento
+   - Também conseguimos criar um período de retenção dos logs garantindo um baixo custo de armazenamento
+   - Permite criar um tópico SNS onde lá será direcionado uma Mensagem para o Admin ou qualuqer outra pessoa autorisada que esteja associada ao tópico, de que ocorra qualquer alteração, eles sejam avisados
+
+   ![s3_sns_retenção.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/s3_sns_reten%C3%A7%C3%A3o.png)
+
+14. Teste no console do Config
+   - Após a criação e umm período de tempo esperando a analise dele aos meus recursos, obtive o resultado de que as configurações das minhas EC2 não estavam em conformidade com as regras
+
+   ![console_config_regra.png](https://github.com/Jeff01875/Monitoramento_compliance-/blob/main/console_config_regra.png)
+
+   ---
+
+## **Conclusão Do Projeto**
+---
+
+  1. Com este projeto consegui obter um ambiente de maior monitoramento
+  2. Implementei regras para que eu tenha o controle e a segurança de que caso ocorra qualquer alteração, seja avisado ou a alteração seja corrigada automaticamente
+  3. Associei regras necessárias aos recursos para que pudessem se comunicar e transferir dados entre eles
      
